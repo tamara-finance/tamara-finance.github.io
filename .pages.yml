@@ -1,0 +1,54 @@
+media:
+  input: assets/images/blog
+  output: /assets/images/blog
+
+content:
+  - name: posts
+    label: פוסטים בבלוג
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    fields:
+      - name: title
+        label: כותרת
+        type: string
+        required: true
+      - name: slug
+        label: כתובת הפוסט
+        description: "מה שיופיע בכתובת הדף. מילים מופרדות במקפים, למשל: מיחזור-משכנתא-מתי-כדאי"
+        type: string
+        required: true
+      - name: date
+        label: תאריך פרסום
+        type: date
+        required: true
+      - name: image
+        label: תמונה ראשית
+        type: image
+      - name: excerpt
+        label: תקציר קצר (לכרטיס בבלוג ולשיתוף ברשתות)
+        type: text
+      - name: description
+        label: "SEO - תיאור לגוגל (עד 155 תווים, לא חובה)"
+        type: text
+      - name: body
+        label: תוכן הפוסט
+        type: rich-text
+
+  - name: testimonials
+    label: המלצות לקוחות
+    type: file
+    path: _data/testimonials.yml
+    list: true
+    fields:
+      - name: name
+        label: שם הממליץ/ה
+        type: string
+        required: true
+      - name: context
+        label: הקשר (למשל "מיחזור משכנתא")
+        type: string
+      - name: text
+        label: טקסט ההמלצה
+        type: text
+        required: true

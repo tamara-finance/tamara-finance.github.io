@@ -1,0 +1,19 @@
+{% assign home = '/' | relative_url %}
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="{{ home }}" aria-label="תמרה אביב - דף הבית">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="תמרה אביב - משכנתא מא' עד ת'" width="140" height="86">
+    </a>
+    <button class="nav-toggle" aria-label="תפריט" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="ניווט ראשי">
+      <a href="{{ home }}#services">שירותים</a>
+      <a href="{{ home }}#about">מי אני</a>
+      <a href="{{ home }}#testimonials">ממליצים</a>
+      <a href="{{ '/blog/' | relative_url }}">בלוג</a>
+      <a href="#contact">צרו קשר</a>
+      <a class="nav-phone" href="tel:{{ site.contact.phone_link }}">{% include icon.html name="phone" %}<span>{{ site.contact.phone_display }}</span></a>
+    </nav>
+  </div>
+</header>

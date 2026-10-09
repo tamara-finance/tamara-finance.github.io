@@ -1,0 +1,12 @@
+{%- if site.google_analytics and site.google_analytics != "" -%}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','{{ site.google_analytics }}');
+  // מעקב אחרי לחיצות על טלפון, וואטסאפ ושליחת טופס
+  document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;
+    if(a.href.indexOf('tel:')===0)gtag('event','click_phone');
+    else if(a.href.indexOf('wa.me')>-1)gtag('event','click_whatsapp');});
+  document.addEventListener('submit',function(e){if(e.target.classList.contains('contact-form'))gtag('event','generate_lead');});
+</script>
+{%- endif -%}

@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="תמרה אביב" width="110" height="68" class="footer-logo">
+    <ul class="social">
+      <li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="אינסטגרם">{% include icon.html name="instagram" %}</a></li>
+      <li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="פייסבוק">{% include icon.html name="facebook" %}</a></li>
+      <li><a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="לינקדאין">{% include icon.html name="linkedin" %}</a></li>
+      <li><a href="{{ site.social.google }}" target="_blank" rel="noopener" aria-label="תמרה אביב בגוגל">{% include icon.html name="google" %}</a></li>
+      <li><a href="{{ site.social.tiktok }}" target="_blank" rel="noopener" aria-label="טיקטוק">{% include icon.html name="tiktok" %}</a></li>
+    </ul>
+    <p class="copy">© {{ site.time | date: "%Y" }} תמרה אביב - ייעוץ משכנתאות. כל הזכויות שמורות.</p>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ">{% include icon.html name="whatsapp" %}</a>

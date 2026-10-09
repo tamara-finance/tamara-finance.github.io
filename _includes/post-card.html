@@ -1,0 +1,11 @@
+<article class="post-card">
+  <a href="{{ include.post.url | relative_url }}" class="post-card-link">
+    {% if include.post.image %}<div class="post-card-img"><img src="{{ include.post.image | relative_url }}" alt="" loading="lazy"></div>{% endif %}
+    <div class="post-card-body">
+      <p class="post-date">{% include date.html date=include.post.date %}</p>
+      <h3>{{ include.post.title }}</h3>
+      <p>{% if include.post.excerpt %}{{ include.post.excerpt | strip_html | truncatewords: 26 }}{% endif %}</p>
+      <span class="read-more">להמשך קריאה ←</span>
+    </div>
+  </a>
+</article>

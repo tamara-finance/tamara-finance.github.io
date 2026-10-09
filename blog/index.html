@@ -1,0 +1,21 @@
+---
+layout: default
+title: "בלוג - ידע שמייצר חיסכון"
+description: "מאמרים וטיפים על משכנתאות, מיחזור משכנתא ואיחוד הלוואות מאת תמרה אביב, יועצת משכנתאות."
+---
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow">בלוג</p>
+    <h1>ידע שמייצר חיסכון</h1>
+    <p class="section-sub">טיפים, סיפורים מהשטח ומה שכדאי לדעת לפני שחותמים על משכנתא</p>
+  </div>
+</section>
+<section class="section section-tight">
+  <div class="container">
+    <div class="post-grid">
+      {% for post in site.posts %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

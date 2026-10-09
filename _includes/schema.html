@@ -1,0 +1,25 @@
+{%- if page.url == "/" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "תמרה אביב - ייעוץ משכנתאות",
+  "alternateName": "תמרה אביב משכנתא מא' עד ת'",
+  "description": {{ site.description | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "logo": {{ site.url | append: site.logo | jsonify }},
+  "image": {{ site.url | append: '/assets/images/tamara.jpg' | jsonify }},
+  "telephone": "+972-54-2555-754",
+  "email": {{ site.contact.email | jsonify }},
+  "areaServed": { "@type": "Country", "name": "ישראל" },
+  "availableChannel": [
+    { "@type": "ServiceChannel", "name": "ייעוץ אונליין בשיחת וידאו - בכל הארץ" },
+    { "@type": "ServiceChannel", "name": "פגישות פרונטליות ברחובות והסביבה" }
+  ],
+  "address": { "@type": "PostalAddress", "addressLocality": "רחובות", "addressCountry": "IL" },
+  "founder": { "@type": "Person", "name": "תמרה אביב", "jobTitle": "יועצת משכנתאות וכלכלנית" },
+  "sameAs": [{{ site.social.instagram | jsonify }}, {{ site.social.facebook | jsonify }}, {{ site.social.linkedin | jsonify }}, {{ site.social.tiktok | jsonify }}, {{ site.social.google | jsonify }}],
+  "knowsAbout": ["ייעוץ משכנתאות אונליין", "ייעוץ משכנתאות", "מיחזור משכנתא", "משכנתא לדירה ראשונה", "איחוד הלוואות", "משכנתא לעצמאים"]
+}
+</script>
+{%- endif -%}

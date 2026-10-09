@@ -1,0 +1,48 @@
+# הגדרות כלליות של האתר
+title: "תמרה אביב | משכנתא מא' עד ת'"
+short_title: "תמרה אביב"
+description: "תמרה אביב, יועצת משכנתאות וכלכלנית. ייעוץ משכנתא אונליין בכל הארץ ופגישות פרונטליות ברחובות והסביבה: משכנתא לדירה ראשונה, מיחזור משכנתא, איחוד הלוואות ומשכנתא לעצמאים."
+url: "https://www.tamara-finance.co.il"
+lang: he
+locale: he_IL
+logo: /assets/images/logo.png
+image: /assets/images/og-image.jpg
+
+# פרטי קשר - שינוי כאן מתעדכן בכל האתר
+contact:
+  phone_display: "054-2555-754"
+  phone_link: "+972542555754"
+  whatsapp: "972542555754"
+  email: "office@tamaraaviv.com"
+  area: "ייעוץ אונליין בכל הארץ | פגישות פרונטליות ברחובות והסביבה"
+social:
+  instagram: "https://www.instagram.com/tamaraaviv"
+  facebook: "https://www.facebook.com/tamara.danielov"
+  linkedin: "https://www.linkedin.com/in/tamara-aviv-136b34102/"
+  tiktok: "https://www.tiktok.com/@tamara_aviv"
+  google: "https://share.google/cyCZANF9l76mXuRpQ"
+
+# חיבורים לגוגל - להדביק כאן את המזהים כשהם מוכנים
+google_analytics: ""          # למשל G-XXXXXXXXXX
+webmaster_verifications:
+  google: ""                  # הקוד מ-Google Search Console (רק החלק שבתוך content)
+
+# בלוג
+permalink: /post/:slug/
+timezone: Asia/Jerusalem
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+exclude:
+  - README.md
+  - .pages.yml

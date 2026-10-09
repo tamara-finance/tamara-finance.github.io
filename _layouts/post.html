@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="page-head">
+    <div class="container narrow">
+      <p class="crumbs"><a href="{{ '/blog/' | relative_url }}">בלוג</a> / </p>
+      <h1>{{ page.title }}</h1>
+      <p class="post-date">{% include date.html date=page.date %} · תמרה אביב</p>
+    </div>
+  </header>
+  <div class="container narrow post-body">
+    {% if page.image %}<img class="post-hero" src="{{ page.image | relative_url }}" alt="">{% endif %}
+    <div class="prose">
+      {{ content }}
+    </div>
+    <aside class="post-cta">
+      <p><strong>רוצים לבדוק את המשכנתא שלכם?</strong> שיחת היכרות ראשונה בלי התחייבות.</p>
+      <a href="#contact" class="btn btn-primary">דברו איתי</a>
+    </aside>
+    <div class="share">
+      <span>שתפו:</span>
+      <a href="https://wa.me/?text={{ page.title | append: ' ' | append: site.url | append: page.url | uri_escape }}" target="_blank" rel="noopener">וואטסאפ</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url | append: page.url | uri_escape }}" target="_blank" rel="noopener">פייסבוק</a>
+    </div>
+  </div>
+  {% assign others = site.posts | where_exp: "p", "p.url != page.url" %}
+  {% if others.size > 0 %}
+  <section class="section section-tint">
+    <div class="container">
+      <h2 class="center">פוסטים נוספים</h2>
+      <div class="post-grid">
+        {% for post in others limit:3 %}{% include post-card.html post=post %}{% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</article>

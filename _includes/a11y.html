@@ -1,0 +1,18 @@
+<button class="a11y-btn" type="button" aria-controls="a11y-panel" aria-expanded="false" aria-label="תפריט נגישות">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2" fill="currentColor"/><path fill="currentColor" d="M20 8.5c-2.6.6-5.3.9-8 .9s-5.4-.3-8-.9l-.5 1.9c2.1.5 4.3.8 6.5.9V14l-2 7h2.1l1.9-5.9 1.9 5.9H16l-2-7v-2.7c2.2-.1 4.4-.4 6.5-.9L20 8.5z"/></svg>
+</button>
+<div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="הגדרות נגישות">
+  <button class="a11y-close" type="button" aria-label="סגירת תפריט הנגישות">×</button>
+  <h2>נגישות</h2>
+  <div class="a11y-grid">
+    <button type="button" data-a11y-font="up">הגדלת טקסט +</button>
+    <button type="button" data-a11y-font="down">הקטנת טקסט −</button>
+    <button type="button" data-a11y="contrast" aria-pressed="false">ניגודיות גבוהה</button>
+    <button type="button" data-a11y="gray" aria-pressed="false">גווני אפור</button>
+    <button type="button" data-a11y="links" aria-pressed="false">הדגשת קישורים</button>
+    <button type="button" data-a11y="font" aria-pressed="false">גופן קריא</button>
+    <button type="button" data-a11y="noanim" aria-pressed="false" class="a11y-wide">עצירת אנימציות</button>
+    <button type="button" data-a11y-reset class="a11y-wide">איפוס הגדרות</button>
+  </div>
+  <a href="{{ '/accessibility/' | relative_url }}">הצהרת נגישות</a>
+</div>

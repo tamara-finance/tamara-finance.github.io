@@ -10,12 +10,12 @@ layout: default
     </div>
   </header>
   <div class="container narrow post-body">
-    {% if page.image %}<img class="post-hero" src="{{ page.image | relative_url }}" alt="">{% endif %}
+    {% if page.image %}<img class="post-hero" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">{% endif %}
     <div class="prose">
       {{ content }}
     </div>
     <aside class="post-cta">
-      <p><strong>רוצים לבדוק את המשכנתא שלכם?</strong> שיחת היכרות ראשונה בלי התחייבות.</p>
+      <p><strong>{{ page.cta | default: "רוצים לבדוק איך אפשר לחסוך?" }}</strong> שיחת היכרות ראשונה בלי התחייבות.</p>
       <a href="#contact" class="btn btn-primary">דברו איתי</a>
     </aside>
     <div class="share">

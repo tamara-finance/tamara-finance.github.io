@@ -31,6 +31,10 @@ content:
       - name: description
         label: "SEO - תיאור לגוגל (עד 155 תווים, לא חובה)"
         type: text
+        - name: cta
+        label: "משפט בקופסה הכחולה בסוף הפוסט (לא חובה)"
+        description: "אם ריק - יופיע: רוצים לבדוק איך אפשר לחסוך?"
+        type: string
       - name: body
         label: תוכן הפוסט
         type: rich-text

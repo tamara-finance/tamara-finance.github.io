@@ -22,4 +22,13 @@
   "knowsAbout": ["ייעוץ משכנתאות אונליין", "ייעוץ משכנתאות", "מיחזור משכנתא", "משכנתא לדירה ראשונה", "איחוד הלוואות", "משכנתא לעצמאים", "משכנתא הפוכה"]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{% for item in site.data.faq %}
+    { "@type": "Question", "name": {{ item.q | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | jsonify }} } }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}
+</script>
 {%- endif -%}

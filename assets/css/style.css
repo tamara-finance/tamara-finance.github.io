@@ -197,6 +197,15 @@ p{margin:0 0 1em}
   .post-grid{grid-template-columns:1fr}
 }
 
+/* faq */
+.faq{display:grid;gap:12px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 20px;box-shadow:0 4px 14px rgba(15,42,69,.05)}
+.faq-item summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;color:var(--navy-deep);display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--navy);flex:none;transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{margin:0 0 18px;color:#3f4c58}
+
 /* ---------- accessibility ---------- */
 :focus-visible{outline:3px solid #f2a900;outline-offset:3px;border-radius:4px}
 .contact-form input:focus-visible,.contact-form textarea:focus-visible{outline:3px solid #f2a900;outline-offset:1px}

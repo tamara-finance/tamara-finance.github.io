@@ -38,7 +38,20 @@ content:
       - name: body
         label: תוכן הפוסט
         type: rich-text
-
+  - name: faq
+    label: שאלות נפוצות
+    type: file
+    path: _data/faq.yml
+    list: true
+    fields:
+      - name: q
+        label: שאלה
+        type: string
+        required: true
+      - name: a
+        label: תשובה
+        type: text
+        required: true
   - name: testimonials
     label: המלצות לקוחות
     type: file

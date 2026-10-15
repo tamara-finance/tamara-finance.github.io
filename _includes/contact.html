@@ -1,18 +1,18 @@
 <section class="contact" id="contact">
   <div class="container contact-grid">
     <div class="contact-info">
-      <p class="eyebrow light">צרו קשר</p>
-      <h2>דברו איתי</h2>
-      <p class="lead">שיחת היכרות ראשונה, בלי התחייבות. השאירו פרטים ואחזור אליכם בהקדם.</p>
+      <p class="eyebrow light">{{ site.data.home.contact.eyebrow }}</p>
+      <h2>{{ site.data.home.contact.title }}</h2>
+      <p class="lead">{{ site.data.home.contact.lead }}</p>
       <ul class="contact-list">
-        <li><a href="tel:{{ site.contact.phone_link }}">{% include icon.html name="phone" %}<span><span class="sr-only">טלפון: </span>{{ site.contact.phone_display }}</span></a></li>
-        <li><a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener">{% include icon.html name="whatsapp" %}<span>שלחו הודעה בוואטסאפ</span></a></li>
-        <li><a href="mailto:{{ site.contact.email }}">{% include icon.html name="mail" %}<span>{{ site.contact.email }}</span></a></li>
-        <li><a href="{{ site.social.google }}" target="_blank" rel="noopener">{% include icon.html name="google" %}<span>העסק בגוגל - ביקורות ושעות פעילות</span></a></li>
-        <li><span class="no-link">{% include icon.html name="pin" %}<span>{{ site.contact.area }}</span></span></li>
+        <li><a href="tel:{{ site.data.contact.phone_link }}">{% include icon.html name="phone" %}<span><span class="sr-only">טלפון: </span>{{ site.data.contact.phone_display }}</span></a></li>
+        <li><a href="https://wa.me/{{ site.data.contact.whatsapp }}" target="_blank" rel="noopener">{% include icon.html name="whatsapp" %}<span>שלחו הודעה בוואטסאפ</span></a></li>
+        <li><a href="mailto:{{ site.data.contact.email }}">{% include icon.html name="mail" %}<span>{{ site.data.contact.email }}</span></a></li>
+        <li><a href="{{ site.data.contact.google }}" target="_blank" rel="noopener">{% include icon.html name="google" %}<span>העסק בגוגל - ביקורות ושעות פעילות</span></a></li>
+        <li><span class="no-link">{% include icon.html name="pin" %}<span>{{ site.data.contact.area }}</span></span></li>
       </ul>
     </div>
-    <form class="contact-form" action="https://formsubmit.co/{{ site.contact.email }}" method="POST">
+    <form class="contact-form" action="https://formsubmit.co/{{ site.data.contact.email }}" method="POST">
       <input type="hidden" name="_subject" value="פנייה חדשה מהאתר - ייעוץ משכנתאות">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
@@ -27,7 +27,7 @@
         <label>אימייל<input type="email" name="email" autocomplete="email" dir="ltr"></label>
       </div>
       <label>הודעה<textarea name="הודעה" rows="4" placeholder="ספרו לי בקצרה במה אוכל לעזור"></textarea></label>
-      <button type="submit" class="btn btn-primary btn-block">שליחה</button>
+      <button type="submit" class="btn btn-primary btn-block">{{ site.data.home.contact.button }}</button>
     </form>
   </div>
 </section>

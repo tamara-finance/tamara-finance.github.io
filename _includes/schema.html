@@ -10,7 +10,7 @@
   "logo": {{ site.url | append: site.logo | jsonify }},
   "image": {{ site.url | append: '/assets/images/tamara.jpg' | jsonify }},
   "telephone": "+972-54-2555-754",
-  "email": {{ site.contact.email | jsonify }},
+  "email": {{ site.data.contact.email | jsonify }},
   "areaServed": { "@type": "Country", "name": "ישראל" },
   "availableChannel": [
     { "@type": "ServiceChannel", "name": "ייעוץ אונליין בשיחת וידאו - בכל הארץ" },
@@ -18,7 +18,7 @@
   ],
   "address": { "@type": "PostalAddress", "addressLocality": "רחובות", "addressCountry": "IL" },
   "founder": { "@type": "Person", "name": "תמרה אביב", "jobTitle": "יועצת משכנתאות וכלכלנית" },
-  "sameAs": [{{ site.social.instagram | jsonify }}, {{ site.social.facebook | jsonify }}, {{ site.social.linkedin | jsonify }}, {{ site.social.tiktok | jsonify }}, {{ site.social.google | jsonify }}],
+  "sameAs": [{{ site.data.contact.instagram | jsonify }}, {{ site.data.contact.facebook | jsonify }}, {{ site.data.contact.linkedin | jsonify }}, {{ site.data.contact.tiktok | jsonify }}, {{ site.data.contact.google | jsonify }}],
   "knowsAbout": ["ייעוץ משכנתאות אונליין", "ייעוץ משכנתאות", "מיחזור משכנתא", "משכנתא לדירה ראשונה", "איחוד הלוואות", "משכנתא לעצמאים", "משכנתא הפוכה"]
 }
 </script>

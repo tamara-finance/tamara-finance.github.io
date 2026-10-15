@@ -2,6 +2,7 @@
 layout: default
 title: "ייעוץ משכנתאות אונליין בכל הארץ - ליווי אישי מהחלום ועד המפתח"
 ---
+{%- assign h = site.data.home -%}
 <section class="hero">
   <picture>
     <source media="(max-width: 900px)" srcset="{{ '/assets/images/hero-sm.jpg' | relative_url }}">
@@ -9,16 +10,16 @@ title: "ייעוץ משכנתאות אונליין בכל הארץ - ליווי 
   </picture>
   <div class="container hero-inner">
     <div class="hero-text">
-      <p class="eyebrow">משכנתא מא' עד ת'</p>
-      <h1>בונים את עתידכם<br><span>על קרקע יציבה</span></h1>
-      <p class="lead">תמרה אביב - יועצת משכנתאות. ליווי אישי ומקצועי מהחלום ועד המפתח בדלת, עם חיסכון אמיתי ושקט נפשי.</p>
+      <p class="eyebrow">{{ h.hero.eyebrow }}</p>
+      <h1>{{ h.hero.title_line1 }}<br><span>{{ h.hero.title_line2 }}</span></h1>
+      <p class="lead">{{ h.hero.lead }}</p>
       <ul class="hero-badges">
-        <li>{% include icon.html name="check" %}ייעוץ אונליין בכל הארץ</li>
-        <li>{% include icon.html name="check" %}פגישות פרונטליות ברחובות והסביבה</li>
+        {% for b in h.hero.badges %}<li>{% include icon.html name="check" %}{{ b }}</li>
+        {% endfor %}
       </ul>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">לתיאום שיחת ייעוץ</a>
-        <a href="#services" class="btn btn-ghost">תחומי התמחות</a>
+        <a href="#contact" class="btn btn-primary">{{ h.hero.button_primary }}</a>
+        <a href="#services" class="btn btn-ghost">{{ h.hero.button_secondary }}</a>
       </div>
     </div>
   </div>
@@ -27,49 +28,26 @@ title: "ייעוץ משכנתאות אונליין בכל הארץ - ליווי 
 <section class="section" id="services">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">השירותים</p>
-      <h2>תחומי התמחות</h2>
-      <p class="section-sub">פתרונות משכנתא מקיפים לכל שלב בחיים - מהדירה הראשונה ועד לאופטימיזציה של משכנתא קיימת</p>
+      <p class="eyebrow">{{ h.services.eyebrow }}</p>
+      <h2>{{ h.services.title }}</h2>
+      <p class="section-sub">{{ h.services.subtitle }}</p>
     </div>
     <div class="services">
+      {% for item in h.services.cards %}
       <article class="service">
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 22 24 8l16 14v18H8z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M19 40V28h10v12" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
-        <h3>ייעוץ משכנתאות</h3>
-        <p>ליווי מקצועי לאורך כל הדרך - מתכנון ראשוני ועד לחתימה על המשכנתא המשתלמת ביותר.</p>
+        <div class="service-icon" aria-hidden="true">{% include service-icon.html name=item.icon %}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
       </article>
-      <article class="service">
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M38 18a15 15 0 0 0-27-4M10 30a15 15 0 0 0 27 4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M38 8v10H28M10 40V30h10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>מיחזור משכנתא</h3>
-        <p>בדיקת משכנתא קיימת, הפחתת ריבית והחזר חודשי על ידי בחינת מסלולים חלופיים ומעבר לבנק משתלם יותר.</p>
-      </article>
-      <article class="service">
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="17" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M25 24h16M35 24v6M41 24v4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div>
-        <h3>משכנתא לדירה ראשונה</h3>
-        <p>ליווי מלא משלב החלום ועד המפתח בדלת - תכנון, אישור עקרוני ומשכנתא מותאמת אישית.</p>
-      </article>
-      <article class="service">
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 18 24 8l18 10H6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M12 22v12M20 22v12M28 22v12M36 22v12M6 40h36" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div>
-        <h3>איחוד הלוואות</h3>
-        <p>איחוד הלוואות קיימות להחזר חודשי אחד, נמוך ומסודר - לחיסכון של עשרות אלפי שקלים.</p>
-      </article>
-      <article class="service">
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="15" width="36" height="25" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M18 15v-4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4M6 26h36" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
-        <h3>משכנתא לעצמאים</h3>
-        <p>פתרונות מימון לעצמאים ובעלי עסקים, כולל התמודדות עם דוחות דו-שנתיים ואישורי הכנסה.</p>
-      </article>
-      <article class="service">
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M12 12l24 24M36 18v18H18" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>משכנתא הפוכה</h3>
-        <p>ייעוץ לבני 60+ על משכנתא הפוכה - המרת ערך הנכס להכנסה חודשית ללא ויתור על הבית.</p>
-      </article>
+      {% endfor %}
     </div>
     <div class="online-strip">
       <div class="online-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 40h16M24 33v7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div>
       <div>
-        <h3>לא גרים באזור? אין בעיה.</h3>
-        <p>הייעוץ מתקיים גם אונליין, בשיחות וידאו, ללקוחות מכל הארץ - מהצפון ועד אילת. אותו ליווי צמוד, בלי לצאת מהבית. למי שמעדיף להיפגש, יש פגישות פרונטליות ברחובות והסביבה.</p>
+        <h3>{{ h.online.title }}</h3>
+        <p>{{ h.online.text }}</p>
       </div>
-      <a href="#contact" class="btn btn-primary">לתיאום שיחת אונליין</a>
+      <a href="#contact" class="btn btn-primary">{{ h.online.button }}</a>
     </div>
   </div>
 </section>
@@ -80,13 +58,13 @@ title: "ייעוץ משכנתאות אונליין בכל הארץ - ליווי 
       <img src="{{ '/assets/images/tamara.jpg' | relative_url }}" alt="תמרה אביב, יועצת משכנתאות וכלכלנית" width="640" height="512" loading="lazy">
     </div>
     <div class="about-text">
-      <p class="eyebrow">מי אני</p>
-      <h2>תמרה אביב</h2>
-      <p class="role">יועצת משכנתאות • כלכלנית</p>
-      <p>אחרי שנים ככלכלנית שכירה, עם ניסיון, יציבות וביטחון, גיליתי שהתשוקה שלי היא ייעוץ משכנתאות. הבנתי שמשכנתא היא לא רק מספרים - היא אחת ההחלטות הכלכליות הכי משמעותיות בחיים, שמשפיעה על הביטחון, השקט הנפשי והדרך שבה נחיה שנים קדימה.</p>
-      <p>ראיתי אנשים שלוקחים את ההתחייבויות הגדולות ביותר בלי להבין את המשמעויות, בלי לדעת שאפשר לחסוך עשרות ואפילו מאות אלפי שקלים. לכן בחרתי בתחום הזה ובדיוק שם אני נכנסת.</p>
-      <p class="goal"><strong>המטרה שלי:</strong> לעזור לכם לקבל החלטות מושכלות, לבנות משכנתא שמתאימה לחיים שלכם ולא של הבנק, ולעבור את התהליך בתחושת ביטחון, סדר, רוגע ושליטה.</p>
-      <a href="#contact" class="btn btn-primary">בואו נדבר</a>
+      <p class="eyebrow">{{ h.about.eyebrow }}</p>
+      <h2>{{ h.about.name }}</h2>
+      <p class="role">{{ h.about.role }}</p>
+      {% for para in h.about.paragraphs %}<p>{{ para }}</p>
+      {% endfor %}
+      {% if h.about.goal %}<p class="goal"><strong>{{ h.about.goal_title }}</strong> {{ h.about.goal }}</p>{% endif %}
+      <a href="#contact" class="btn btn-primary">{{ h.about.button }}</a>
     </div>
   </div>
 </section>
@@ -94,8 +72,8 @@ title: "ייעוץ משכנתאות אונליין בכל הארץ - ליווי 
 <section class="section" id="testimonials">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">ממליצים</p>
-      <h2>מה לקוחות אומרים</h2>
+      <p class="eyebrow">{{ h.testimonials.eyebrow }}</p>
+      <h2>{{ h.testimonials.title }}</h2>
     </div>
     <div class="testimonials">
       {% for t in site.data.testimonials %}
@@ -106,15 +84,15 @@ title: "ייעוץ משכנתאות אונליין בכל הארץ - ליווי 
       </figure>
       {% endfor %}
     </div>
-    <p class="center google-cta"><a href="{{ site.social.google }}" target="_blank" rel="noopener" class="btn btn-ghost">{% include icon.html name="star" %}לביקורות בגוגל</a></p>
+    <p class="center google-cta"><a href="{{ site.data.contact.google }}" target="_blank" rel="noopener" class="btn btn-ghost">{% include icon.html name="star" %}{{ h.testimonials.button }}</a></p>
   </div>
 </section>
 
 <section class="section" id="faq">
   <div class="container narrow">
     <div class="section-head">
-      <p class="eyebrow">שאלות נפוצות</p>
-      <h2>שאלות ותשובות על משכנתאות</h2>
+      <p class="eyebrow">{{ h.faq.eyebrow }}</p>
+      <h2>{{ h.faq.title }}</h2>
     </div>
     <div class="faq">
       {% for item in site.data.faq %}
@@ -130,14 +108,14 @@ title: "ייעוץ משכנתאות אונליין בכל הארץ - ליווי 
 <section class="section section-tint" id="blog">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">בלוג</p>
-      <h2>ידע שמייצר חיסכון</h2>
+      <p class="eyebrow">{{ h.blog.eyebrow }}</p>
+      <h2>{{ h.blog.title }}</h2>
     </div>
     <div class="post-grid">
       {% for post in site.posts limit:3 %}
         {% include post-card.html post=post %}
       {% endfor %}
     </div>
-    <p class="center"><a href="{{ '/blog/' | relative_url }}" class="btn btn-ghost">לכל המאמרים</a></p>
+    <p class="center"><a href="{{ '/blog/' | relative_url }}" class="btn btn-ghost">{{ h.blog.button }}</a></p>
   </div>
 </section>

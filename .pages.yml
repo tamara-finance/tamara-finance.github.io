@@ -3,6 +3,112 @@ media:
   output: /assets/images/blog
 
 content:
+  - name: home
+    label: "דף הבית - טקסטים"
+    type: file
+    path: _data/home.yml
+    fields:
+      - name: hero
+        label: "ראש העמוד"
+        type: object
+        fields:
+          - { name: eyebrow, label: "שורה קטנה מעל הכותרת", type: string }
+          - { name: title_line1, label: "כותרת - שורה 1", type: string }
+          - { name: title_line2, label: "כותרת - שורה 2", type: string }
+          - { name: lead, label: "טקסט פתיחה", type: text }
+          - { name: badges, label: "שורות עם V", type: string, list: true }
+          - { name: button_primary, label: "כפתור ראשי", type: string }
+          - { name: button_secondary, label: "כפתור משני", type: string }
+      - name: services
+        label: "שירותים"
+        type: object
+        fields:
+          - { name: eyebrow, label: "שורה קטנה מעל הכותרת", type: string }
+          - { name: title, label: "כותרת", type: string }
+          - { name: subtitle, label: "תת-כותרת", type: text }
+          - name: cards
+            label: "כרטיסי שירות"
+            type: object
+            list: true
+            fields:
+              - name: icon
+                label: "אייקון"
+                type: select
+                options:
+                  values:
+                    - { value: home, label: "בית" }
+                    - { value: refresh, label: "חצים (מיחזור)" }
+                    - { value: key, label: "מפתח" }
+                    - { value: bank, label: "בנק" }
+                    - { value: briefcase, label: "תיק עבודה" }
+                    - { value: arrow, label: "חץ" }
+                    - { value: calculator, label: "מחשבון" }
+                    - { value: shield, label: "מגן" }
+              - { name: title, label: "שם השירות", type: string }
+              - { name: text, label: "תיאור", type: text }
+      - name: online
+        label: "פס אונליין"
+        type: object
+        fields:
+          - { name: title, label: "כותרת", type: string }
+          - { name: text, label: "טקסט", type: text }
+          - { name: button, label: "כפתור", type: string }
+      - name: about
+        label: "מי אני"
+        type: object
+        fields:
+          - { name: eyebrow, label: "שורה קטנה מעל הכותרת", type: string }
+          - { name: name, label: "שם", type: string }
+          - { name: role, label: "תפקיד", type: string }
+          - { name: paragraphs, label: "פסקאות", type: text, list: true }
+          - { name: goal_title, label: "כותרת המסגרת", type: string }
+          - { name: goal, label: "טקסט המסגרת", type: text }
+          - { name: button, label: "כפתור", type: string }
+      - name: testimonials
+        label: "כותרת ההמלצות"
+        type: object
+        fields:
+          - { name: eyebrow, label: "שורה קטנה מעל הכותרת", type: string }
+          - { name: title, label: "כותרת", type: string }
+          - { name: button, label: "כפתור הביקורות בגוגל", type: string }
+      - name: faq
+        label: "כותרת השאלות הנפוצות"
+        type: object
+        fields:
+          - { name: eyebrow, label: "שורה קטנה מעל הכותרת", type: string }
+          - { name: title, label: "כותרת", type: string }
+      - name: blog
+        label: "כותרת הבלוג"
+        type: object
+        fields:
+          - { name: eyebrow, label: "שורה קטנה מעל הכותרת", type: string }
+          - { name: title, label: "כותרת", type: string }
+          - { name: button, label: "כפתור", type: string }
+      - name: contact
+        label: "אזור צרו קשר"
+        type: object
+        fields:
+          - { name: eyebrow, label: "שורה קטנה מעל הכותרת", type: string }
+          - { name: title, label: "כותרת", type: string }
+          - { name: lead, label: "טקסט", type: text }
+          - { name: button, label: "כפתור שליחה", type: string }
+
+  - name: contact
+    label: "פרטי קשר ורשתות"
+    type: file
+    path: _data/contact.yml
+    fields:
+      - { name: phone_display, label: "טלפון (כפי שיוצג)", type: string }
+      - { name: phone_link, label: "טלפון לחיוג (בפורמט +972...)", type: string }
+      - { name: whatsapp, label: "מספר וואטסאפ (972... בלי +)", type: string }
+      - { name: email, label: "אימייל (גם יעד הטופס)", type: string }
+      - { name: area, label: "אזור שירות", type: string }
+      - { name: instagram, label: "קישור אינסטגרם", type: string }
+      - { name: facebook, label: "קישור פייסבוק", type: string }
+      - { name: linkedin, label: "קישור לינקדאין", type: string }
+      - { name: tiktok, label: "קישור טיקטוק", type: string }
+      - { name: google, label: "קישור לעסק בגוגל", type: string }
+
   - name: posts
     label: פוסטים בבלוג
     type: collection
@@ -31,13 +137,14 @@ content:
       - name: description
         label: "SEO - תיאור לגוגל (עד 155 תווים, לא חובה)"
         type: text
-        - name: cta
+      - name: cta
         label: "משפט בקופסה הכחולה בסוף הפוסט (לא חובה)"
         description: "אם ריק - יופיע: רוצים לבדוק איך אפשר לחסוך?"
         type: string
       - name: body
         label: תוכן הפוסט
         type: rich-text
+
   - name: faq
     label: שאלות נפוצות
     type: file
@@ -52,6 +159,7 @@ content:
         label: תשובה
         type: text
         required: true
+
   - name: testimonials
     label: המלצות לקוחות
     type: file

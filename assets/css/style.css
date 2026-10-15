@@ -197,6 +197,9 @@ p{margin:0 0 1em}
   .post-grid{grid-template-columns:1fr}
 }
 
+.form-note{margin:0;font-size:.85rem;color:var(--muted)}
+.form-note a{color:var(--navy)}
+
 /* faq */
 .faq{display:grid;gap:12px}
 .faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 20px;box-shadow:0 4px 14px rgba(15,42,69,.05)}

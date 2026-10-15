@@ -145,6 +145,18 @@ content:
         label: תוכן הפוסט
         type: rich-text
 
+  - name: privacy
+    label: "מדיניות פרטיות"
+    type: file
+    path: privacy.md
+    fields:
+      - { name: title, label: "כותרת", type: string }
+      - { name: updated, label: "תאריך עדכון (טקסט)", type: string }
+      - { name: description, label: "תיאור לגוגל", type: text }
+      - { name: layout, label: "תבנית (לא לשנות)", type: string, hidden: true }
+      - { name: permalink, label: "כתובת (לא לשנות)", type: string, hidden: true }
+      - { name: body, label: "תוכן", type: rich-text }
+
   - name: faq
     label: שאלות נפוצות
     type: file

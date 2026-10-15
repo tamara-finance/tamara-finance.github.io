@@ -23,7 +23,7 @@ social:
   google: "https://share.google/cyCZANF9l76mXuRpQ"
 
 # חיבורים לגוגל - להדביק כאן את המזהים כשהם מוכנים
-google_analytics: ""          # למשל G-XXXXXXXXXX
+google_analytics: "G-V5XZ1VNKQ9"          # למשל G-XXXXXXXXXX
 webmaster_verifications:
   google: ""                  # הקוד מ-Google Search Console (רק החלק שבתוך content)
 

@@ -1,0 +1,1 @@
+{%- assign wa_msg = site.data.contact.whatsapp_message | default: "היי תמרה, ביקרתי באתר ואשמח לשמוע פרטים נוספים" -%}https://wa.me/{{ site.data.contact.whatsapp }}?text={{ wa_msg | uri_escape }}

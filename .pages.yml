@@ -101,6 +101,7 @@ content:
       - { name: phone_display, label: "טלפון (כפי שיוצג)", type: string }
       - { name: phone_link, label: "טלפון לחיוג (בפורמט +972...)", type: string }
       - { name: whatsapp, label: "מספר וואטסאפ (972... בלי +)", type: string }
+      - { name: whatsapp_message, label: "הודעה מוכנה בוואטסאפ", description: "הטקסט שיופיע אוטומטית כשלוחצים על כפתור הוואטסאפ באתר", type: text }
       - { name: email, label: "אימייל (גם יעד הטופס)", type: string }
       - { name: area, label: "אזור שירות", type: string }
       - { name: instagram, label: "קישור אינסטגרם", type: string }
